@@ -38,6 +38,9 @@ return {
           },
         },
       })
+
+      -- JSON --
+      vim.lsp.enable("jsonls")
     end,
   },
 }
