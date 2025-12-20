@@ -7,11 +7,9 @@ return {
     },
     version = "*",
     config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup()
-
-      -- Lua --
-      vim.lsp.enable("lua_ls")
+      --------------------------------
+      -- LSP Advanced Configuration --
+      --------------------------------
 
       -- Rust --
       vim.lsp.config("rust_analyzer", {
@@ -26,8 +24,6 @@ return {
       })
 
       -- Python --
-      vim.lsp.enable("ruff")
-
       vim.lsp.config("basedpyright", {
         on_attach = function(_, bufnr)
           vim.lsp.inlay_hint.enable(true, { bufnr = bufnr, })
@@ -41,8 +37,39 @@ return {
         },
       })
 
-      -- JSON --
-      vim.lsp.enable("jsonls")
+      -----------------
+      -- Mason Setup --
+      -----------------
+
+      require("mason").setup()
+      require("mason-lspconfig").setup(
+        {
+          ensure_installed = {
+            -- Bash
+            "bashls",
+            -- CSS
+            "cssls",
+            "html",
+            -- TypeScript / JavaScript
+            "biome",
+            "ts_ls",
+            -- JSON
+            "jsonls",
+            -- Lua
+            "lua_ls",
+            -- Markdown
+            "marksman",
+            -- Python
+            "basedpyright",
+            "ruff",
+            -- Rust
+            "rust_analyzer",
+            -- TOML
+            "taplo",
+          },
+          automatic_enable = true,
+        }
+      )
     end,
   },
 }
