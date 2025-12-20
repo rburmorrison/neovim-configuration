@@ -37,18 +37,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>ls", vim.lsp.buf.signature_help,
       { buffer = ctx.buf, desc = "Signature help", })
 
-    vim.keymap.set(
-      "n",
-      "<leader>ld",
-      function() MiniExtra.pickers.diagnostic({ scope = "current", }) end,
-      { buffer = ctx.buf, desc = "Document diagnostics picker", }
-    )
+    vim.keymap.set("n", "<leader>ld", function() MiniExtra.pickers.diagnostic({ scope = "current", }) end,
+      { buffer = ctx.buf, desc = "Document diagnostics picker", })
 
-    vim.keymap.set(
-      "n",
-      "<leader>lD",
-      function() MiniExtra.pickers.diagnostic({ scope = "all", }) end,
-      { buffer = ctx.buf, desc = "Workspace diagnostics picker", }
-    )
+    vim.keymap.set("n", "<leader>lD", function() MiniExtra.pickers.diagnostic({ scope = "all", }) end,
+      { buffer = ctx.buf, desc = "Workspace diagnostics picker", })
   end,
 })
