@@ -1,3 +1,9 @@
+----------------------
+-- General Bindings --
+----------------------
+
+vim.keymap.set("n", "<leader>L", "<cmd>set number!<cr>", { desc = "Toggle line numbers", })
+
 -----------------------
 -- Movement Bindings --
 -----------------------
