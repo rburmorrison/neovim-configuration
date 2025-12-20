@@ -3,6 +3,7 @@
         "vim",
         "MiniPick",
         "MiniFiles",
-        "MiniExtra"
+        "MiniExtra",
+        "MiniNotify"
     ]
 }
