@@ -26,6 +26,8 @@ return {
       })
 
       -- Python --
+      vim.lsp.enable("ruff")
+
       vim.lsp.config("basedpyright", {
         on_attach = function(_, bufnr)
           vim.lsp.inlay_hint.enable(true, { bufnr = bufnr, })
