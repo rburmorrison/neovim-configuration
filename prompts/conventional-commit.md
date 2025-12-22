@@ -33,6 +33,8 @@ The commit should be in the following format:
 
 The user will provide the git diff. If the diff is empty, simply state that it is empty.
 
+Choose only one type to represent the change. If more than one would apply, choose the one that best represents the change.
+
 Only output the generated message. Do not output any other text.
 
 ## user

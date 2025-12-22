@@ -88,12 +88,14 @@ Select one of the following shortcodes depending on the type of change:
 - :t-rex: Code that adds backwards compatibility.
 
 ```
-<shortcode> <description>
+:<shortcode>: <description>
 
 [optional body]
 ```
 
 The user will provide the git diff. If the diff is empty, simply state that it is empty.
+
+Choose only one shortcode to represent the change. If more than one would apply, choose the one that best represents the change.
 
 Only output the generated message. Do not output any other text.
 
