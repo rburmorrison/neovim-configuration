@@ -33,22 +33,14 @@ vim.o.wildoptions = "pum"
 -- LSP Settings --
 ------------------
 
-vim.cmd("set completeopt+=menuone,noselect,popup")
-
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("user-lsp-settings", {}),
   callback = function(args)
-    ------------------------
-    -- Enable Completion --
-    ------------------------
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-    if client:supports_method("textDocument/completion") then
-      local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-      client.server_capabilities.completionProvider.triggerCharacters = chars
-
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true, })
-    end
+    --------------------
+    -- Format on Save --
+    --------------------
 
     if not client:supports_method("textDocument/willSaveWaitUntil") and client:supports_method("textDocument/formatting") then
       vim.api.nvim_create_autocmd("BufWritePre", {
@@ -60,9 +52,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
+    -----------------
+    -- Diagnostics --
+    -----------------
+
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
+      underline = true,
     })
   end,
 })
