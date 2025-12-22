@@ -4,7 +4,6 @@
 
 vim.opt.winborder = "rounded"
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
 
 ----------
 -- Tabs --
