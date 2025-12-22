@@ -45,6 +45,8 @@ return {
       require("mason-lspconfig").setup(
         {
           ensure_installed = {
+            -- Fish
+            "fish_lsp",
             -- Bash
             "bashls",
             -- CSS
