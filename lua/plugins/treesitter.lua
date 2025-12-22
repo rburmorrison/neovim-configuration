@@ -1,9 +1,14 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    version = "*",
     build = ":TSUpdate",
-    opts = {
-      ensure_installed = {
+    config = function()
+      local treesitter = require("nvim-treesitter")
+
+      treesitter.setup()
+
+      treesitter.install({
         "bash",
         "c",
         "cpp",
@@ -35,11 +40,7 @@ return {
         "vim",
         "vimdoc",
         "yaml",
-      },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = true,
-      },
-    },
+      })
+    end,
   },
 }
