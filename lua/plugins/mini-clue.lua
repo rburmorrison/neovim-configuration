@@ -46,7 +46,7 @@ return {
         },
         clues = {
           { mode = "n", keys = "<leader>l", desc = "+lsp", },
-          { mode = "p", keys = "<leader>p", desc = "+codecompanion", },
+          { mode = "n", keys = "<leader>p", desc = "+codecompanion", },
 
           clue.gen_clues.builtin_completion(),
           clue.gen_clues.g(),
