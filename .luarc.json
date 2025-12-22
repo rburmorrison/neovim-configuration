@@ -4,6 +4,7 @@
         "MiniPick",
         "MiniFiles",
         "MiniExtra",
-        "MiniNotify"
+        "MiniNotify",
+        "MiniDiff"
     ]
 }
