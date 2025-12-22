@@ -7,6 +7,7 @@ return {
       provider = "codestral",
       virtualtext = {
         auto_trigger_ft = { "*", },
+        auto_trigger_ignore_ft = { "codecompanion", },
         keymap = {
           accept = "<C-K>",
           accept_line = "<C-k>",
