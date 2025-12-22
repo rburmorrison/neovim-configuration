@@ -39,6 +39,10 @@ return {
           -- `z` key
           { mode = "n", keys = "z", },
           { mode = "x", keys = "z", },
+
+          -- Square brackets
+          { mode = "n", keys = "[", },
+          { mode = "n", keys = "]", },
         },
         clues = {
           { mode = "n", keys = "<leader>l", desc = "+lsp", },
@@ -46,6 +50,7 @@ return {
 
           clue.gen_clues.builtin_completion(),
           clue.gen_clues.g(),
+          clue.gen_clues.square_brackets(),
           clue.gen_clues.marks(),
           clue.gen_clues.registers(),
           clue.gen_clues.windows(),
