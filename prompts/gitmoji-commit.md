@@ -67,7 +67,7 @@ Select one of the following shortcodes depending on the type of change:
 - :airplane: Improve offline support.
 - :t-rex: Code that adds backwards compatibility.
 
-```
+```git
 :<shortcode>: <description>
 
 [optional body]

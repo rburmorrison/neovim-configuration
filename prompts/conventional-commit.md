@@ -25,7 +25,7 @@ Only the following conventional commit types should be used:
 
 The commit should be in the following format:
 
-```
+```git
 <type>: <description>
 
 [optional body]
