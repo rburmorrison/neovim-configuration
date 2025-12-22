@@ -67,6 +67,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+--------------
+-- Terminal --
+--------------
+
+vim.opt.shell = "fish"
+
+vim.api.nvim_create_autocmd("TermClose", {
+  callback = function()
+    vim.cmd("bdelete")
+  end,
+})
+
 -------------------
 -- Miscellaneous --
 -------------------
