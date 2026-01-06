@@ -35,7 +35,7 @@ return {
           adapter = "mistral",
           model = "devstral-2512",
           opts = {
-            completion_provider = "default",
+            completion_provider = "blink",
           },
         },
         inline = {
