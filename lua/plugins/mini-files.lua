@@ -2,7 +2,7 @@ return {
   "nvim-mini/mini.files",
   version = "*",
   keys = {
-    { "<leader>o", function() MiniFiles.open() end, desc = "Open file explorer", },
+    { "<leader>O", function() MiniFiles.open() end, desc = "Open file explorer", },
   },
   opts = {
     mappings = {
