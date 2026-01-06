@@ -4,7 +4,7 @@ return {
     version = "*",
     lazy = false,
     keys = {
-      { "<leader>O", function() MiniDiff.toggle_overlay() end, desc = "Toggle diff overlay", },
+      { "<leader>d", function() MiniDiff.toggle_overlay() end, desc = "Toggle diff overlay", },
     },
     opts = {},
   },
