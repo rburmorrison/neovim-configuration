@@ -82,6 +82,20 @@ vim.api.nvim_create_autocmd("TermClose", {
 
 vim.opt.undofile = true
 
+--------------------------------------------------
+-- Disable mini.indentscope in terminal buffers --
+--------------------------------------------------
+
+vim.api.nvim_create_autocmd(
+  "TermOpen",
+  {
+    desc = "Disable 'mini.indentscope' in terminal buffer",
+    callback = function(data)
+      vim.b[data.buf].miniindentscope_disable = true
+    end,
+  }
+)
+
 ----------------
 -- Treesitter --
 ----------------
