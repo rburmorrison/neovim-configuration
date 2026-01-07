@@ -22,6 +22,13 @@ vim.opt.smartindent = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+--------------------------
+-- Ignorecase/Smartcase --
+--------------------------
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 --------------
 -- WildMenu --
 --------------
@@ -76,9 +83,9 @@ vim.api.nvim_create_autocmd("TermClose", {
   end,
 })
 
--------------------
--- Miscellaneous --
--------------------
+--------------
+-- Undofile --
+--------------
 
 vim.opt.undofile = true
 
