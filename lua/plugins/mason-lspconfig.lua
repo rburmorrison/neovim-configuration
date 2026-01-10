@@ -37,6 +37,14 @@ return {
         },
       })
 
+      -- TypeScript --
+      vim.lsp.config("ts_ls", {
+        on_attach = function(client, _)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      })
+
       -----------------
       -- Mason Setup --
       -----------------
