@@ -2,6 +2,10 @@ return {
   {
     "brenoprata10/nvim-highlight-colors",
     versions = "*",
-    opts = {},
+    opts = {
+      exclude_filetypes = {
+        "lazy",
+      },
+    },
   },
 }
