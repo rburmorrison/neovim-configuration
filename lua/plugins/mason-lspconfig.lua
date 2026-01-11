@@ -50,6 +50,26 @@ return {
       -----------------
 
       require("mason").setup()
+
+      -- Auto-install formatters and linters
+      local registry = require("mason-registry")
+
+      local packages = {
+        "shfmt",
+        "shellcheck",
+        "prettier",
+      }
+
+      for _, pkg_name in ipairs(packages) do
+        local ok, pkg = pcall(registry.get_package, pkg_name)
+        if ok then
+          if not pkg:is_installed() then
+            pkg:install()
+          end
+        end
+      end
+
+      -- Auto-install LSPs
       require("mason-lspconfig").setup(
         {
           ensure_installed = {
