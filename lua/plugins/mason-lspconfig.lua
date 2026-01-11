@@ -57,6 +57,8 @@ return {
             "fish_lsp",
             -- Bash
             "bashls",
+            -- Just
+            "just",
             -- CSS
             "cssls",
             "html",
