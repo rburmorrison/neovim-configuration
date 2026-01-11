@@ -30,6 +30,12 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 --------------
+-- Spelling --
+--------------
+
+vim.opt.spell = true
+
+--------------
 -- WildMenu --
 --------------
 
