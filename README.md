@@ -32,23 +32,25 @@ return {
     opts = {
         provider = "openai_fim_compatible",
         provider_options = {
-            api_key = "TERM",
-            name = "LMStudio",
-            end_point = "http://localhost:1234/v1/completions",
-            model = "rnj-1-instruct",
-            template = {
-                prompt = function(context_before_cursor, context_after_cursor, _)
-                    return "<|pre_fim|>" .. context_before_cursor .. "<|suf_fim|>" .. context_after_cursor .. "<|mid_fim|>"
-                end,
-                suffix = false,
-            },
-        },
-        optional = {
-            stop = {
-                "<|pre_fim|>",
-                "<|suf_fim|>",
-                "<|mid_fim|>",
-                "<|eoc_fim|>",
+            openai_fim_compatible = {
+                api_key = "TERM",
+                name = "LMStudio",
+                end_point = "http://localhost:1234/v1/completions",
+                model = "rnj-1-instruct",
+                template = {
+                    prompt = function(context_before_cursor, context_after_cursor, _)
+                        return "<|pre_fim|>" .. context_before_cursor .. "<|suf_fim|>" .. context_after_cursor .. "<|mid_fim|>"
+                    end,
+                    suffix = false,
+                },
+                optional = {
+                    stop = {
+                        "<|pre_fim|>",
+                        "<|suf_fim|>",
+                        "<|mid_fim|>",
+                        "<|eoc_fim|>",
+                    },
+                },
             },
         },
     },
@@ -66,7 +68,7 @@ return {
         adapters = {
             http = {
                 lmstudio = function()
-                    return require("codecompanion.adapters").extend("opeanai_compatible", {
+                    return require("codecompanion.adapters").extend("openai_compatible", {
                         env = {
                             url = "http://localhost:1234",
                         },
@@ -76,8 +78,10 @@ return {
         },
         interactions = {
             chat = {
-                adapter = "lmstudio",
-                model = "devstral-small-2-24b-instruct-2512",
+                adapter = {
+                    name = "mistral",
+                    model = "devstral-2512",
+                },
                 opts = {
                     completion = "blink",
                 },
