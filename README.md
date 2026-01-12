@@ -79,8 +79,8 @@ return {
         interactions = {
             chat = {
                 adapter = {
-                    name = "mistral",
-                    model = "devstral-2512",
+                    name = "lmstudio",
+                    model = "mistralai/devstral-small-2-2512",
                 },
                 opts = {
                     completion = "blink",
