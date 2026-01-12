@@ -83,7 +83,7 @@ return {
             "cssls",
             "html",
             -- TypeScript / JavaScript
-            "biome",
+            "eslint",
             "ts_ls",
             -- JSON
             "jsonls",
