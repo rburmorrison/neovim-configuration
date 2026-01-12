@@ -24,6 +24,10 @@ return {
         },
       },
       display = {
+        diff = {
+          enabled = true,
+          provider = "mini_diff",
+        },
         chat = {
           window = {
             width = 0.3,
@@ -32,24 +36,33 @@ return {
       },
       interactions = {
         chat = {
-          adapter = "mistral",
-          model = "devstral-2512",
+          adapter = {
+            name = "mistral",
+            model = "devstral-2512",
+          },
           opts = {
             completion_provider = "blink",
           },
         },
         inline = {
-          adapter = "mistral",
-          model = "devstral-2512",
+          adapter = {
+            name = "mistral",
+            model = "devstral-2512",
+          },
         },
         cmd = {
-          adapter = "mistral",
-          model = "devstral-2512",
+          adapter = {
+            name = "mistral",
+            model = "devstral-2512",
+          },
         },
         background = {
-          adapter = "mistral",
-          model = "labs-devstral-small-2512",
+          adapter = {
+            name = "mistral",
+            model = "labs-devstral-small-2512",
+          },
         },
+
       },
     },
     dependencies = {
