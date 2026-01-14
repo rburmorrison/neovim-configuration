@@ -27,33 +27,33 @@ The configuration by default uses Mistral's API for both CodeCompanion and Minue
 ```lua
 -- ./lua/plugins/minuet-ai.lua
 return {
-    "milanglacier/minuet-ai.nvim",
-    -- ... normal settings
-    opts = {
-        provider = "openai_fim_compatible",
-        provider_options = {
-            openai_fim_compatible = {
-                api_key = "TERM",
-                name = "LMStudio",
-                end_point = "http://localhost:1234/v1/completions",
-                model = "rnj-1-instruct",
-                template = {
-                    prompt = function(context_before_cursor, context_after_cursor, _)
-                        return "<|pre_fim|>" .. context_before_cursor .. "<|suf_fim|>" .. context_after_cursor .. "<|mid_fim|>"
-                    end,
-                    suffix = false,
-                },
-                optional = {
-                    stop = {
-                        "<|pre_fim|>",
-                        "<|suf_fim|>",
-                        "<|mid_fim|>",
-                        "<|eoc_fim|>",
-                    },
-                },
-            },
+  "milanglacier/minuet-ai.nvim",
+  -- ... normal settings
+  opts = {
+    provider = "openai_fim_compatible",
+    provider_options = {
+      openai_fim_compatible = {
+        api_key = "TERM",
+        name = "LMStudio",
+        end_point = "http://localhost:1234/v1/completions",
+        model = "rnj-1-instruct",
+        template = {
+          prompt = function(context_before_cursor, context_after_cursor, _)
+            return "<|pre_fim|>" .. context_before_cursor .. "<|suf_fim|>" .. context_after_cursor .. "<|mid_fim|>"
+          end,
+          suffix = false,
         },
+        optional = {
+          stop = {
+            "<|pre_fim|>",
+            "<|suf_fim|>",
+            "<|mid_fim|>",
+            "<|eoc_fim|>",
+          },
+        },
+      },
     },
+  },
 }
 ```
 
@@ -62,33 +62,33 @@ return {
 ```lua
 -- ./lua/plugins/codecompanion.lua
 return {
-    "olimorris/codecompanion.nvim",
-    -- ... normal settings
-    opts = {
-        adapters = {
-            http = {
-                lmstudio = function()
-                    return require("codecompanion.adapters").extend("openai_compatible", {
-                        env = {
-                            url = "http://localhost:1234",
-                        },
-                    })
-                end,
+  "olimorris/codecompanion.nvim",
+  -- ... normal settings
+  opts = {
+    adapters = {
+      http = {
+        lmstudio = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "http://localhost:1234",
             },
-        },
-        interactions = {
-            chat = {
-                adapter = {
-                    name = "lmstudio",
-                    model = "mistralai/devstral-small-2-2512",
-                },
-                opts = {
-                    completion = "blink",
-                },
-            },
-            -- ... and change the adapters for the rest as well
-        },
+          })
+        end,
+      },
     },
+    interactions = {
+      chat = {
+        adapter = {
+          name = "lmstudio",
+          model = "mistralai/devstral-small-2-2512",
+        },
+        opts = {
+          completion = "blink",
+        },
+      },
+      -- ... and change the adapters for the rest as well
+    },
+  },
 }
 ```
 
