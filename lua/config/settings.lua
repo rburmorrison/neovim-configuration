@@ -43,6 +43,12 @@ vim.opt.spell = true
 vim.o.wildmode = "noselect:lastused,full"
 vim.o.wildoptions = "pum"
 
+-----------------------------------
+-- Directory-Level Configuration --
+-----------------------------------
+
+vim.opt.exrc = true
+
 ------------------
 -- LSP Settings --
 ------------------
