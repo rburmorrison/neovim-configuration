@@ -11,7 +11,7 @@ return {
           "minipick",
         },
         keymap = {
-          accept = "<C-K>",
+          accept = "<C-S-k>",
           accept_line = "<C-k>",
           accept_n_lines = "<C-;>",
           prev = "<A-[>",
