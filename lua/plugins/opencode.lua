@@ -27,6 +27,14 @@ return {
       vim.keymap.set("v", "<leader>pi", function()
         require("opencode").ask("@this: ", { submit = true, })
       end, { desc = "Opencode inline", })
+
+      vim.keymap.set({ "n", "x", }, "go", function()
+        return require("opencode").operator("@this ")
+      end, { desc = "Add range to opencode", expr = true, })
+
+      vim.keymap.set("n", "goo", function()
+        return require("opencode").operator("@this ") .. "_"
+      end, { desc = "Add line to opencode", expr = true, })
     end,
   },
 }
