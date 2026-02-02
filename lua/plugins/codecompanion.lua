@@ -52,11 +52,23 @@ return {
           },
         },
       },
+      adapters = {
+        http = {
+          opencode_zen = function()
+            return require("codecompanion.adapters").extend("openai_compatible", {
+              env = {
+                url = "https://opencode.ai/zen",
+                api_key = "OPENCODE_ZEN_API_KEY",
+              },
+            })
+          end,
+        },
+      },
       interactions = {
         chat = {
           adapter = {
-            name = "mistral",
-            model = "devstral-2512",
+            name = "opencode_zen",
+            model = "claude-haiku-4-5",
           },
           opts = {
             completion_provider = "blink",
@@ -64,23 +76,22 @@ return {
         },
         inline = {
           adapter = {
-            name = "mistral",
-            model = "devstral-2512",
+            name = "opencode_zen",
+            model = "claude-haiku-4-5",
           },
         },
         cmd = {
           adapter = {
-            name = "mistral",
-            model = "devstral-2512",
+            name = "opencode_zen",
+            model = "claude-haiku-4-5",
           },
         },
         background = {
           adapter = {
-            name = "mistral",
-            model = "labs-devstral-small-2512",
+            name = "opencode_zen",
+            model = "claude-haiku-4-5",
           },
         },
-
       },
     },
     dependencies = {
