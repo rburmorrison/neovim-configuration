@@ -57,7 +57,6 @@ return {
       local packages = {
         "shfmt",
         "shellcheck",
-        "prettier",
       }
 
       for _, pkg_name in ipairs(packages) do
@@ -83,7 +82,7 @@ return {
             "cssls",
             "html",
             -- TypeScript / JavaScript
-            "eslint",
+            "biome",
             "ts_ls",
             -- JSON
             "jsonls",
